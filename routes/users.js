@@ -18,7 +18,7 @@ router.get("/api/getUsers/", async (req, res) => {
 
         if (!limit) {
             const allUsers = await User.find();
-            return res.status(200).json(allCards);
+            return res.status(200).json(allUsers);
         }
 
         const parsedLimit = Number(limit);
@@ -117,10 +117,6 @@ router.delete("/api/users/:id", async (req, res) => {
         res.status(404).json({ message: `User with ID ${req.params.id} not found` })
     }
 })
-
-
-
-
 
 router.post("/api/users/login/", async (req, res) => {
     try {
