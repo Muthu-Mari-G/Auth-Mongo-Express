@@ -35,7 +35,7 @@ router.get("/api/getUsers/", async (req, res) => {
         }
 
         const limitedUsers = await User.find().limit(parsedLimit);
-        return res.status(200).json(limitedCards);
+        return res.status(200).json(limitedUsers);
     } catch (error) {
         res.status(500).json({ message: `Error fetching users ${error}` })
     }
